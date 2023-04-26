@@ -21,12 +21,12 @@ python -m pip install -U Pip
 
 ##### 2. Crea el entorno para el proyecto (lo llamaremos 'env').
 ```
-python -m venv env
-env\Scripts\activate
+python -m venv Pandas-Practicas-env
+Pandas-Practicas-env\Scripts\activate
 ```
 
 ##### 3. Actualiza PIP en tu entorno e instala las dependencias del proyecto.
 ```
 python -m pip install -U Pip
-python -m pip install -U Pandas OpenPyXL iPyKernel iPyChart MatPlotLib Seaborn
+python -m pip install -U Pandas OpenPyXL iPyKernel iPyChart
 ```
