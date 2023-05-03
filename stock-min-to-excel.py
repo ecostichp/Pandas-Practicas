@@ -6,7 +6,7 @@ def df_limpio():
     df = pd.read_excel("data.xlsx",'data')
     df["Clave de artículo "] = df["Clave de artículo "].astype(object)
     df["Fecha "] = pd.to_datetime(df["Fecha "], dayfirst=True)
-    df["Cantidad "] = pd.to_numeric(df["Cantidad "])
+    df["Cantidad "] = pd.to_numeric(df["Cantidad "].str.replace(',',''))
     return df
 
 
@@ -21,7 +21,7 @@ def stock_min_to_excel(almacenes):
         dfA = df[df["Almacén "] == almacen][["Fecha ","Cantidad "]]
 
         dfprov = dfA.groupby("Fecha ").sum()
-        dfprov["Cantidad "] = dfprov["Cantidad "] *-1
+        dfprov["Cantidad "] = dfprov[dfprov["Cantidad "] < 0 ] * -1
         dfprov["Dias "] = 1
         dfprov["Probabilidad "] = 1 / dfprov["Cantidad "].count()
 
