@@ -29,6 +29,6 @@ env_pandas_practicas\Scripts\activate
 
 ### 4. Actualiza PIP en tu entorno e instala las dependencias del proyecto.
 ```
-python -m pip install -U Pip  
-python -m pip install Pandas iPyKernel OpenPyXL MatPlotLib Seaborn
+python -m pip install -U Pip
+python -m pip install Pandas iPyKernel OpenPyXL Seaborn iPyChart iPyWidgets ReportLab
 ```
